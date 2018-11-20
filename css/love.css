@@ -28,3 +28,9 @@ html,body{
 	font-size: 36px;
 	color: #00c2ff;
 }
+
+#audio{
+	position: fixed;
+	right: 0;
+	bottom: 0;
+}
