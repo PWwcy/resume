@@ -22,16 +22,6 @@ html,body{
 .kong{
 	/*height: 200px;*/
 }
-.container>div>div{
-	/*flex: 1;*/
-	/*border: 1px solid black;*/
-	background: red;
-	/*padding: 5px;*/
-	/* display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column; */
-}
 
 .content{
 	position: fixed;
