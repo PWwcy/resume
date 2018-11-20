@@ -59,32 +59,28 @@
 		var that = this;
 		$('body').keyup(function(e){
 			var code = e.keyCode;
-			if(code !=116 ){
-				$('.content').remove();
-			}
 			switch(code){
 				case 38:
 					if(that.xs>1){
 						that.sshow();
 						that.xs--;
-					}
+					}$('.content').remove();
+					that.showtext();
 					break;
 				case 40:
 					if(that.xs<16){
 						that.xs++;
 						that.xshow();
-					}
+					}$('.content').remove();
+					that.showtext();
 					break;
 				case 27:
 					that.clearout();
 					that.esc();
 					break;
 				case 32:
-					// that.init();
+					that.play(2);
 					break;
-			}
-			if(code != 116 && code != 27){
-					that.showtext();
 			}
 		})
 	}
@@ -178,6 +174,10 @@
 		}
 	};
 	Love.prototype.showtext = function() {
+		var that = this;
+		setTimeout(function(){
+			that.play(1)
+		},3000)
 		this.tt=0;
 		var con = text[this.xs-1].split("@");
 		this.clearout();
@@ -192,6 +192,15 @@
 			for(var j=0;j<this.out.length;j++){
 				clearInterval(this.out[j]);
 			}
+		}
+	}
+	Love.prototype.play=function(aa){
+		var audio = $('#audio')[0];
+		audio.volume=0.4;
+		if(audio.paused){
+			audio.play();
+		}else{
+			audio.pause();
 		}
 	}
 	Love.prototype.yanshi = function(el,con,i) {
